@@ -57,8 +57,8 @@
     - zbxagent_configure_logrotate
   become: true
   ansible.builtin.template:
-    src: zabbix_agent2.logrotate.j2
-    dest: /etc/logrotate.d/zabbix_agent2
+    src: zabbix-agent2.logrotate.j2
+    dest: /etc/logrotate.d/zabbix-agent2
     owner: root
     group: root
     mode: '0644'

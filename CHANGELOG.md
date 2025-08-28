@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.17] - 2025-08-28
+
+### Role - agent2
+
+- Fixed logrotate configuration file name.
+
 ## [1.1.16] - 2025-06-11
 
 ### Collection
