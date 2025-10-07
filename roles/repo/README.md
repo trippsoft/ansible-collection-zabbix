@@ -20,7 +20,7 @@ None.
 ## Role Arguments
 |Option|Description|Type|Required|Choices|Default|
 |---|---|---|---|---|---|
-| zbx_major_version | <p>The major version of Zabbix to be deployed.</p> | str | yes | <ul><li>7.2</li><li>7.0</li></ul> |  |
+| zbx_major_version | <p>The major version of Zabbix to be deployed.</p> | str | yes | <ul><li>7.4</li><li>7.2</li><li>7.0</li></ul> |  |
 
 
 ## License
