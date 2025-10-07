@@ -21,6 +21,6 @@ provisioner:
   inventory:
     group_vars:
       subjects:
-        zbx_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.2}'
+        zbx_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.4}'
 verifier:
   name: ansible

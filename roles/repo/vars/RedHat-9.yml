@@ -3,6 +3,7 @@ _zbx_os_is_supported: true
 _zbx_os_is_tested: true
 
 _zbx_repo_package_url_by_major_version:
+  '7.4': https://repo.zabbix.com/zabbix/7.4/release/rhel/9/noarch/zabbix-release-latest-7.4.el9.noarch.rpm
   '7.2': https://repo.zabbix.com/zabbix/7.2/release/rhel/9/noarch/zabbix-release-latest-7.2.el9.noarch.rpm
   '7.0': https://repo.zabbix.com/zabbix/7.0/rhel/9/x86_64/zabbix-release-latest-7.0.el9.noarch.rpm
 

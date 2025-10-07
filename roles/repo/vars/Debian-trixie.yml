@@ -1,0 +1,9 @@
+---
+_zbx_os_is_supported: true
+_zbx_os_is_tested: true
+
+_zbx_repo_package_url_by_major_version:
+  '7.4': https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.4+debian13_all.deb
+  '7.0': https://repo.zabbix.com/zabbix/7.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.0+debian13_all.deb
+
+_zbx_repo_package_url: "{{ _zbx_repo_package_url_by_major_version[zbx_major_version] }}"
