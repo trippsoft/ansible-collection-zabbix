@@ -27,7 +27,7 @@ This role installs the Zabbix Agent 2 on a Linux or Windows system.
 ## Role Arguments
 |Option|Description|Type|Required|Choices|Default|
 |---|---|---|---|---|---|
-| zbxagent_major_version | <p>The major version of the Zabbix Agent 2 to install.</p><p>On Linux systems, this is required.</p><p>On Windows systems, this is ignored and the latest version is always installed.  If this becomes an issue, the role will be ammended to allow for version selection.</p> | str | no | <ul><li>7.2</li><li>7.0</li></ul> |  |
+| zbxagent_major_version | <p>The major version of the Zabbix Agent 2 to install.</p><p>On Linux systems, this is required.</p><p>On Windows systems, this is ignored and the latest version is always installed.  If this becomes an issue, the role will be ammended to allow for version selection.</p> | str | no | <ul><li>7.4</li><li>7.2</li><li>7.0</li></ul> |  |
 | zbxagent_configure_logrotate | <p>Whether to configure logrotate for the Zabbix Agent 2 log file.</p><p>On Windows, this is ignored.</p><p>If *zbxagent_log_type* is set to `file`, this is `true` by default.  Otherwise, it is `false`.</p><p>If set to `true`, the *zbxagent_log_size* should be set to `0` to prevent conflicts.</p> | bool | no |  | True |
 | zbxagent_configure_firewall | <p>Whether to configure the host firewall for use with Zabbix Agent 2.</p> | bool | no |  | True |
 | zbxagent_install_ember_plus_plugin | <p>Whether to install the Ember+ plugin for the Zabbix Agent 2 on Linux systems.</p><p>On Windows, this is ignored.</p> | bool | no |  | False |
