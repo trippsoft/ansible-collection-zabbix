@@ -1,9 +1,6 @@
 ---
 - name: Ensure Zabbix GPG keys are installed
-  loop:
-    - https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX
-    - https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-08EFA7DD
-    - https://repo.zabbix.com/zabbix-official-repo.key
+  loop: "{{ _zbx_gpg_keys }}"
   become: true
   ansible.builtin.rpm_key:
     key: "{{ item }}"
