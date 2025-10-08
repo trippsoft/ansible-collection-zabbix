@@ -41,7 +41,7 @@ provisioner:
         zbxserver_ip_addresses:
           - "{{ ansible_host }}"
         zbxserver_pgsql_standalone: ${MOLECULE_PGSQL_STANDALONE:-false}
-        zbxserver_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.2}'
+        zbxserver_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.4}'
         zbxserver_vault_database_mount_point: zabbix
         zbxserver_vault_database_path: database
 verifier:
