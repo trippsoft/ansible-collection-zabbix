@@ -51,6 +51,9 @@ jobs:
         standalone:
           - true
           - false
+        exclude:
+          - box: debian13_base
+            version: '7.2'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
