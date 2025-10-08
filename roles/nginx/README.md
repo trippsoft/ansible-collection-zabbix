@@ -9,8 +9,8 @@ This role installs NGINX as a web frontend for Zabbix Server on a Linux system.
 
 | Platform | Versions |
 | -------- | -------- |
-| Debian | <ul><li>bookworm</li></ul> |
-| EL | <ul><li>9</li><li>8</li></ul> |
+| Debian | <ul><li>trixie</li><li>bookworm</li></ul> |
+| EL | <ul><li>10</li><li>9</li><li>8</li></ul> |
 | Ubuntu | <ul><li>noble</li><li>jammy</li></ul> |
 
 ## Dependencies
@@ -26,9 +26,9 @@ This role installs NGINX as a web frontend for Zabbix Server on a Linux system.
 ## Role Arguments
 |Option|Description|Type|Required|Choices|Default|
 |---|---|---|---|---|---|
-| zbxserver_major_version | <p>The major version of Zabbix to install.</p><p>This defaults to the latest supported version for the OS.</p> | str | yes | <ul><li>7.2</li><li>7.0</li></ul> |  |
-| zbxserver_nginx_module_version | <p>The version of the NGINX module to install on EL systems.</p><p>This has no effect on other systems.</p><p>This defaults to the latest supported version for the OS.</p> | str | no | <ul><li>1.24</li><li>1.22</li><li>1.20</li></ul> |  |
-| zbxserver_php_module_version | <p>The version of the PHP module to install on EL systems.</p><p>This has no effect on other systems.</p><p>This defaults to the latest supported version for the OS.</p><p>The offered module versions for each EL major version can be found here: https://access.redhat.com/support/policy/updates/rhel-app-streams-life-cycle</p> | str | no | <ul><li>8.2</li><li>8.1</li><li>8.0</li><li>7.4</li></ul> |  |
+| zbxserver_major_version | <p>The major version of Zabbix to install.</p><p>This defaults to the latest supported version for the OS.</p> | str | yes | <ul><li>7.4</li><li>7.2</li><li>7.0</li></ul> |  |
+| zbxserver_nginx_module_version | <p>The version of the NGINX module to install on EL 8 and 9 systems.</p><p>This has no effect on other systems.</p><p>This defaults to the latest supported version for the OS.</p> | str | no | <ul><li>1.24</li><li>1.22</li><li>1.20</li></ul> |  |
+| zbxserver_php_module_version | <p>The version of the PHP module to install on EL 8 and 9 systems.</p><p>This has no effect on other systems.</p><p>This defaults to the latest supported version for the OS.</p><p>The offered module versions for each EL major version can be found here: https://access.redhat.com/support/policy/updates/rhel-app-streams-life-cycle</p> | str | no | <ul><li>8.2</li><li>8.1</li><li>8.0</li><li>7.4</li></ul> |  |
 | zbxserver_configure_selinux | <p>Whether to configure SELinux for Zabbix.</p><p>For EL systems, this defaults to true.</p><p>For other systems, this defaults to false.</p> | bool | no |  |  |
 | zbxserver_configure_vault | <p>Whether to configure HashiCorp Vault for Zabbix.</p> | bool | no |  | True |
 | zbxserver_database_type | <p>The type of database to use for Zabbix.</p> | str | no | <ul><li>postgresql</li><li>mysql</li></ul> | postgresql |
