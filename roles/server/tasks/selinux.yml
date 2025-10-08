@@ -1,6 +1,9 @@
 ---
 - name: Ensure Zabbix is allowed to connect to various TCP ports
   become: true
+  when:
+    - ansible_os_family == 'RedHat'
+    - ansible_distribution_major_version | int < 10
   ansible.posix.seboolean:
     name: zabbix_can_network
     state: true

@@ -48,7 +48,7 @@
 
 - name: Prepare Vault
   hosts:
-    - subjects
+    - vault
   roles:
     - role: trippsc2.hashi_vault.testing_ca
 

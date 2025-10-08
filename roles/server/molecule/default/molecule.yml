@@ -17,6 +17,12 @@ platforms:
     groups:
       - windows
       - windows_domain
+  - name: vault
+    box: jtarpley/rocky9_cis
+    memory: 2048
+    cpus: 2
+    provider_options:
+      default_prefix: zabbix_server_
   - name: linux
     box: jtarpley/${MOLECULE_BOX:-rocky9_cis}
     memory: 2048
@@ -31,7 +37,7 @@ provisioner:
     group_vars:
       all:
         vault_token: 47542cbc-6bf8-4fba-8eda-02e0a0d29a0a
-        vault_url: "http://{{ hostvars['linux'].ansible_host }}:8200"
+        vault_url: "http://{{ hostvars['vault'].ansible_host }}:8200"
         zabbix_host: "{{ hostvars['linux'].ansible_host }}"
         zabbix_port: 443
         zabbix_ssl: true
@@ -51,7 +57,7 @@ provisioner:
         pgsql_log_to_syslog: true
         pgsql_vault_ssl_mode: verify-full
         pgsql_vault_access_hostname: '127.0.0.1'
-        zbxserver_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.2}'
+        zbxserver_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.4}'
         zbxserver_pgsql_standalone: false
         zbxserver_database_type: ${MOLECULE_ZABBIX_DATABASE_TYPE:-postgresql}
         zbxserver_database_host: localhost
