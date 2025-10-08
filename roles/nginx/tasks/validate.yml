@@ -31,6 +31,7 @@
 - name: Validate NGINX module version (EL)
   when:
     - ansible_os_family == 'RedHat'
+    - ansible_distribution_major_version | int < 10
     - zbxserver_nginx_module_version is defined
   ansible.builtin.assert:
     that:
@@ -41,6 +42,7 @@
 - name: Validate PHP module version (EL)
   when:
     - ansible_os_family == 'RedHat'
+    - ansible_distribution_major_version | int < 10
     - zbxserver_php_module_version is defined
   ansible.builtin.assert:
     that:

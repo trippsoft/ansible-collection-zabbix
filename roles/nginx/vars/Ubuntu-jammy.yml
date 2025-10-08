@@ -2,6 +2,7 @@
 _zbxserver_os_is_supported: true
 
 _zbxserver_supported_major_versions:
+  - '7.4'
   - '7.2'
   - '7.0'
 
@@ -14,6 +15,7 @@ _zbxserver_php_postgresql_packages:
   - php8.1-pgsql
 
 _zbxserver_web_server_root_by_major_versions:
+  '7.4': /usr/share/zabbix/ui
   '7.2': /usr/share/zabbix/ui
   '7.0': /usr/share/zabbix
 

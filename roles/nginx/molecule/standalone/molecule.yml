@@ -8,6 +8,12 @@ driver:
   cachier: machine
   parallel: true
 platforms:
+  - name: vault
+    box: jtarpley/rocky9_cis
+    memory: 2048
+    cpus: 2
+    provider_options:
+      default_prefix: zabbix_nginx_standalone_
   - name: linux
     box: jtarpley/${MOLECULE_BOX:-rocky9_cis}
     memory: 2048
@@ -17,7 +23,7 @@ platforms:
     groups:
       - subjects
   - name: database
-    box: jtarpley/${MOLECULE_BOX:-rocky9_cis}
+    box: jtarpley/rocky9_cis
     memory: 2048
     cpus: 2
     provider_options:
@@ -30,8 +36,8 @@ provisioner:
     group_vars:
       all:
         vault_token: 47542cbc-6bf8-4fba-8eda-02e0a0d29a0a
-        vault_url: "http://{{ hostvars['linux'].ansible_host }}:8200"
-        zbxserver_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.2}'
+        vault_url: "http://{{ hostvars['vault'].ansible_host }}:8200"
+        zbxserver_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.4}'
         zbxserver_configure_vault: true
         zbxserver_database_type: ${MOLECULE_ZABBIX_DATABASE_TYPE:-postgresql}
         zbxserver_vault_database_mount_point: zabbix
@@ -66,7 +72,7 @@ provisioner:
         pgsql_vault_ssl_mode: verify-full
         pgsql_vault_access_hostname: "{{ ansible_host }}"
         pgsql_vault_ip_addresses:
-          - "{{ hostvars['linux'].ansible_host }}"
+          - "{{ hostvars['vault'].ansible_host }}"
         zbxserver_pgsql_standalone: true
         zbxserver_ip_addresses:
           - "{{ hostvars['linux'].ansible_host }}"

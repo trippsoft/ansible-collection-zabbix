@@ -11,6 +11,7 @@ argument_specs:
         type: str
         required: true
         choices:
+          - '7.4'
           - '7.2'
           - '7.0'
         description:
@@ -24,7 +25,7 @@ argument_specs:
           - '1.22'
           - '1.20'
         description:
-          - The version of the NGINX module to install on EL systems.
+          - The version of the NGINX module to install on EL 8 and 9 systems.
           - This has no effect on other systems.
           - This defaults to the latest supported version for the OS.
       zbxserver_php_module_version:
@@ -36,7 +37,7 @@ argument_specs:
           - '8.0'
           - '7.4'
         description:
-          - The version of the PHP module to install on EL systems.
+          - The version of the PHP module to install on EL 8 and 9 systems.
           - This has no effect on other systems.
           - This defaults to the latest supported version for the OS.
           - 'The offered module versions for each EL major version can be found here: https://access.redhat.com/support/policy/updates/rhel-app-streams-life-cycle'
