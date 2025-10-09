@@ -9,8 +9,8 @@ This role installs and configures the Zabbix Proxy on a Linux system.
 
 | Platform | Versions |
 | -------- | -------- |
-| Debian | <ul><li>bookworm</li></ul> |
-| EL | <ul><li>9</li><li>8</li></ul> |
+| Debian | <ul><li>trixie</li><li>bookworm</li></ul> |
+| EL | <ul><li>10</li><li>9</li><li>8</li></ul> |
 | Ubuntu | <ul><li>noble</li><li>jammy</li></ul> |
 
 ## Dependencies
@@ -36,7 +36,7 @@ This role installs and configures the Zabbix Proxy on a Linux system.
 | zabbix_url_path | <p>The URL path for the Zabbix API.</p><p>If using Apache for web frontend, this should be set to `zabbix` unless configured otherwise.</p><p>If using NGINX for web frontend, this should be set to an empty string unless configured otherwise.</p> | str | no |  |  |
 | zabbix_username | <p>The username to use for API requests.</p> | str | yes |  |  |
 | zabbix_password | <p>The password to use for API requests.</p> | str | yes |  |  |
-| zbxproxy_major_version | <p>The major version of Zabbix to install.</p><p>This defaults to the latest supported version for the OS.</p> | str | no | <ul><li>7.2</li><li>7.0</li></ul> |  |
+| zbxproxy_major_version | <p>The major version of Zabbix to install.</p><p>This defaults to the latest supported version for the OS.</p> | str | no | <ul><li>7.4</li><li>7.2</li><li>7.0</li></ul> |  |
 | zbxproxy_configure_selinux | <p>Whether to manage SELinux settings for the Zabbix Proxy.</p><p>For EL systems, this defaults to true.</p><p>For other systems, this defaults to false.</p> | bool | no |  |  |
 | zbxproxy_configure_firewall | <p>Whether to manage the host firewall for use with Zabbix Proxy.</p> | bool | no |  | True |
 | zbxproxy_configure_logrotate | <p>Whether to manage logrotate settings for the Zabbix Proxy.</p> | bool | no |  | True |
