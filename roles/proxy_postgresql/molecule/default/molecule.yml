@@ -42,8 +42,8 @@ provisioner:
         pgsql_log_to_syslog: true
         pgsql_vault_ssl_mode: verify-full
         pgsql_vault_access_hostname: "{{ ansible_host }}"
-        pgsql_vault_ip_addresses: >-
-          {{ [ansible_host] if zbxproxy_pgsql_standalone else [] }}
+        pgsql_vault_ip_addresses: 
+          - "{{ hostvars['vault'].ansible_host }}"
         zbxproxy_ip_addresses:
           - "{{ ansible_host }}"
         zbxproxy_pgsql_standalone: ${MOLECULE_PGSQL_STANDALONE:-false}
