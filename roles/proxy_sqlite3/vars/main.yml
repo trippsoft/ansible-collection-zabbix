@@ -1,5 +1,6 @@
 ---
 _zbxproxy_sqlite3_schema_script_path_by_zabbix_major_version:
+  '7.4': /usr/share/zabbix/sql-scripts/sqlite3/proxy.sql
   '7.2': /usr/share/zabbix/sql-scripts/sqlite3/proxy.sql
   '7.0': /usr/share/zabbix-sql-scripts/sqlite3/proxy.sql
 
