@@ -8,6 +8,12 @@ driver:
   cachier: machine
   parallel: true
 platforms:
+  - name: vault
+    box: jtarpley/rocky9_cis
+    memory: 2048
+    cpus: 2
+    provider_options:
+      default_prefix: zabbix_proxy_postgresql_
   - name: linux
     box: jtarpley/${MOLECULE_BOX:-rocky9_cis}
     memory: 2048
@@ -22,7 +28,7 @@ provisioner:
     group_vars:
       all:
         vault_token: 47542cbc-6bf8-4fba-8eda-02e0a0d29a0a
-        vault_url: "http://{{ hostvars['linux'].ansible_host }}:8200"        
+        vault_url: "http://{{ hostvars['vault'].ansible_host }}:8200"        
       subjects:
         pgsql_major_version: '17'
         pgsql_ssl: true
@@ -41,7 +47,7 @@ provisioner:
         zbxproxy_ip_addresses:
           - "{{ ansible_host }}"
         zbxproxy_pgsql_standalone: ${MOLECULE_PGSQL_STANDALONE:-false}
-        zbxproxy_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.2}'
+        zbxproxy_major_version: '${MOLECULE_ZABBIX_MAJOR_VERSION:-7.4}'
         zbxproxy_vault_database_mount_point: zabbix
         zbxproxy_vault_database_path: database
 verifier:
