@@ -2,6 +2,56 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2025-10-09
+
+### Role - agent2
+
+- Added support for Zabbix 7.4.
+- Added support for Debian 13.
+- Added support for EL 10.
+
+### Role - nginx
+
+- Added support for Zabbix 7.4.
+- Added support for Debian 13.
+- Added support for EL 10.
+
+### Role - proxy
+
+- Added support for Zabbix 7.4.
+- Added support for Debian 13.
+- Added support for EL 10.
+
+### Role - proxy_postgresql
+
+- Added support for Zabbix 7.4.
+- Added support for Debian 13.
+- Added support for EL 10.
+
+### Role - proxy_sqlite3
+
+- Added support for Zabbix 7.4.
+- Added support for Debian 13.
+- Added support for EL 10.
+
+### Role - repo
+
+- Added support for Zabbix 7.4.
+- Added support for Debian 13.
+- Added support for EL 10.
+
+### Role - server
+
+- Added support for Zabbix 7.4.
+- Added support for Debian 13.
+- Added support for EL 10.
+
+### Role - server_postgresql
+
+- Added support for Zabbix 7.4.
+- Added support for Debian 13.
+- EL 10 support omitted for now due to TimescaleDB not being available.
+
 ## [1.1.17] - 2025-08-28
 
 ### Role - agent2
