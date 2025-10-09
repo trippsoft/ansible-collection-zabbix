@@ -4,7 +4,6 @@ _zbxproxy_os_is_tested: true
 
 _zbxproxy_supported_major_versions:
   - '7.4'
-  - '7.2'
   - '7.0'
 
 _zbxproxy_default_configure_selinux: true
