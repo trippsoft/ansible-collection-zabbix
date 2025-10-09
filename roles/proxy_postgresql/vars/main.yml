@@ -6,8 +6,6 @@ _zbxproxy_pgsql_listen_on_local_only: >-
   {{ pgsql_listen_on_local_only | default(_zbxproxy_default_pgsql_listen_on_local_only) }}
 _zbxproxy_pgsql_listen_on_all_addresses: >-
   {{ pgsql_listen_on_all_addresses | default(_zbxproxy_default_pgsql_listen_on_all_addresses) }}
-_zbxproxy_pgsql_install_timescaledb: >-
-  {{ pgsql_install_timescaledb | default(_zbxproxy_default_pgsql_install_timescaledb) }}
 _zbxproxy_pgsql_hba_entries: >-
   [
   {% if zbxproxy_pgsql_standalone | bool %}
@@ -24,6 +22,7 @@ _zbxproxy_pgsql_hba_entries: >-
   ]
 
 _zbxproxy_pgsql_schema_script_path_by_zabbix_major_version:
+  '7.4': /usr/share/zabbix/sql-scripts/postgresql/proxy.sql
   '7.2': /usr/share/zabbix/sql-scripts/postgresql/proxy.sql
   '7.0': /usr/share/zabbix-sql-scripts/postgresql/proxy.sql
 
