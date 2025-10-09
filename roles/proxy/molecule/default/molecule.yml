@@ -23,7 +23,7 @@ platforms:
     groups:
       - subjects
   - name: server
-    box: jtarpley/${MOLECULE_BOX:-rocky9_cis}
+    box: jtarpley/rocky9_cis
     memory: 2048
     cpus: 2
     provider_options:
