@@ -8,9 +8,11 @@
     mode: '0755'
     state: directory
 
-- name: Ensure the SQLite3 directory exists (SELinux)
+- name: Ensure the SQLite3 directory exists (EL 8 and 9 SELinux)
   when:
     - _zbxproxy_configure_selinux
+    - ansible_os_family == 'RedHat'
+    - ansible_distribution_major_version | int < 10
   become: true
   ansible.builtin.file:
     name: "{{ zbxproxy_database_name | dirname }}"
@@ -40,9 +42,11 @@
     mode: '0600'
     state: file
 
-- name: Ensure the SQLite3 database is owned by the Zabbix user (SELinux)
+- name: Ensure the SQLite3 database is owned by the Zabbix user (EL 8 and 9 SELinux)
   when:
     - _zbxproxy_configure_selinux
+    - ansible_os_family == 'RedHat'
+    - ansible_distribution_major_version | int < 10
   become: true
   ansible.builtin.file:
     name: "{{ zbxproxy_database_name }}"
