@@ -50,7 +50,7 @@
       ansible.builtin.set_fact:
         _pgsql_hba_entries_expected:
           - local all all peer
-          - "host all {{ pgsql_vault_user | default('vault') }} {{ hostvars['linux'].ansible_host }}/32 scram-sha-256"
+          - "host all {{ pgsql_vault_user | default('vault') }} {{ hostvars['vault'].ansible_host }}/32 scram-sha-256"
           - "host {{ zbxproxy_database_name | default('zabbix-proxy') }} {{ zbxproxy_user | default('zabbix') }} {{ hostvars['linux'].ansible_host }}/32 scram-sha-256"
           - host all all 127.0.0.1/32 scram-sha-256
           - host all all ::1/128 scram-sha-256
