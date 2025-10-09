@@ -13,8 +13,8 @@ The *pgsql_additional_hba_entries* variable is overridden by this role. The rest
 
 | Platform | Versions |
 | -------- | -------- |
-| Debian | <ul><li>bookworm</li></ul> |
-| EL | <ul><li>9</li><li>8</li></ul> |
+| Debian | <ul><li>trixie</li><li>bookworm</li></ul> |
+| EL | <ul><li>10</li><li>9</li><li>8</li></ul> |
 | Ubuntu | <ul><li>noble</li><li>jammy</li></ul> |
 
 ## Dependencies
@@ -34,7 +34,7 @@ The *pgsql_additional_hba_entries* variable is overridden by this role. The rest
 |---|---|---|---|---|---|
 | vault_url | <p>The URL for accessing HashiCorp Vault.</p><p>Alternatively, this can be configured through ansible.cfg or environment variables.</p> | str | no |  |  |
 | vault_token | <p>The token for accessing HashiCorp Vault.</p><p>Alternatively, this (or any other authentication method) can be configured through ansible.cfg or environment variables.</p> | str | no |  |  |
-| zbxproxy_major_version | <p>The major version of Zabbix to install.</p> | str | yes | <ul><li>7.2</li><li>7.0</li></ul> |  |
+| zbxproxy_major_version | <p>The major version of Zabbix to install.</p> | str | yes | <ul><li>7.4</li><li>7.2</li><li>7.0</li></ul> |  |
 | zbxproxy_pgsql_standalone | <p>Whether the PostgreSQL server is separate from the Zabbix Proxy.</p><p>If set to `true`, *pgsql_listen_on_local_only* defaults to `false` (and must be `false`) and *pgsql_listen_on_all_addresses* defaults to `true`.</p><p>If set to `false`, *pgsql_listen_on_local_only* defaults to `true` and *pgsql_listen_on_all_addresses* defaults to `false`.</p> | bool | no |  | False |
 | zbxproxy_pgsql_additional_hba_entries | <p>Additional host-based authentication entries to add to the pg_hba.conf file.</p><p>These entries are in addition to the default entries from the **trippsc2.postgresql.install** role and the entries added by this role.</p> | list of dicts of 'zbxproxy_pgsql_additional_hba_entries' options | no |  | [] |
 | zbxproxy_ip_addresses | <p>The IP addresses of the Zabbix proxy.</p><p>If *zbxproxy_pgsql_standalone* is `true`, this is required.</p><p>A pg_hba.conf entry will be created to access the Zabbix proxy database authenticated with the Zabbix proxy user via scram-sha-256 for each IP address.</p> | list of 'str' | no |  |  |
