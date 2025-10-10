@@ -38,14 +38,22 @@ jobs:
       fail-fast: false
       matrix:
         box:
+          - debian13_base
           - debian12_base
+          - rocky10_base
           - rocky9_cis
           - rocky8_cis
           - ubuntu2404_base
           - ubuntu2204_base
         version:
+          - '7.4'
           - '7.2'
           - '7.0'
+        exclude:
+          - box: debian13_base
+            version: '7.2'
+          - box: rocky10_base
+            version: '7.2'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -75,14 +83,22 @@ jobs:
       fail-fast: false
       matrix:
         box:
+          - debian13_base
           - debian12_base
+          - rocky10_base
           - rocky9_cis
           - rocky8_cis
           - ubuntu2404_base
           - ubuntu2204_base
         version:
+          - '7.4'
           - '7.2'
           - '7.0'
+        exclude:
+          - box: debian13_base
+            version: '7.2'
+          - box: rocky10_base
+            version: '7.2'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -115,10 +131,11 @@ jobs:
           - w2025_cis
           - w2022_cis
           - w2019_cis
+          - w11_25h2_base
           - w11_24h2_base
           - w11_23h2_base
-          - w10_22h2_base
         version:
+          - '7.4'
           - '7.2'
           - '7.0'
     steps:
@@ -153,10 +170,11 @@ jobs:
           - w2025_cis
           - w2022_cis
           - w2019_cis
+          - w11_25h2_base
           - w11_24h2_base
           - w11_23h2_base
-          - w10_22h2_base
         version:
+          - '7.4'
           - '7.2'
           - '7.0'
     steps:
