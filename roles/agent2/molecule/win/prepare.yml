@@ -24,3 +24,4 @@
           - clientAuth
         cert_copy_ca_chain: true
         cert_ca_chain_path: "{{ zbxagent_tls_ca_file }}"
+    - role: trippsc2.windows.testing_chocolatey
