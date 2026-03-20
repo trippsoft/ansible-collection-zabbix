@@ -21,7 +21,7 @@
         _zbxserver_vault_password: >-
           {{ lookup('ansible.builtin.password',
                     '/dev/null chars=ascii_lowercase,ascii_uppercase,digits,punctuation length=20') }}
-    
+
     - name: Create user secret
       when:
         - _zbxserver_vault_user.password is defined

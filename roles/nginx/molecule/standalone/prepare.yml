@@ -20,7 +20,7 @@
         - ansible_os_family == 'RedHat'
       ansible.builtin.set_fact:
         _pgsql_home_directory: /var/lib/pgsql
-    
+
     - name: Prepare PostgreSQL
       when:
         - zbxserver_database_type == 'postgresql'
@@ -95,7 +95,7 @@
         name: "{{ _nginx_group }}"
         state: present
         system: true
-    
+
     - name: Create nginx user
       become: true
       ansible.builtin.user:

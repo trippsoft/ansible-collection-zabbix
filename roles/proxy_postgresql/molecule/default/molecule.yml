@@ -28,7 +28,7 @@ provisioner:
     group_vars:
       all:
         vault_token: 47542cbc-6bf8-4fba-8eda-02e0a0d29a0a
-        vault_url: "http://{{ hostvars['vault'].ansible_host }}:8200"        
+        vault_url: "http://{{ hostvars['vault'].ansible_host }}:8200"
       subjects:
         pgsql_major_version: '17'
         pgsql_ssl: true
@@ -42,7 +42,7 @@ provisioner:
         pgsql_log_to_syslog: true
         pgsql_vault_ssl_mode: verify-full
         pgsql_vault_access_hostname: "{{ ansible_host }}"
-        pgsql_vault_ip_addresses: 
+        pgsql_vault_ip_addresses:
           - "{{ hostvars['vault'].ansible_host }}"
         zbxproxy_ip_addresses:
           - "{{ ansible_host }}"

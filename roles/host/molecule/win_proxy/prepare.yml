@@ -98,7 +98,7 @@
         name: "{{ _nginx_group }}"
         state: present
         system: true
-    
+
     - name: Create nginx user
       become: true
       ansible.builtin.user:
@@ -139,7 +139,7 @@
         name: zabbix
         state: present
         system: true
-    
+
     - name: Create zabbix user
       become: true
       ansible.builtin.user:
@@ -183,7 +183,7 @@
         name: zabbix
         state: present
         system: true
-    
+
     - name: Create zabbix user
       become: true
       ansible.builtin.user:

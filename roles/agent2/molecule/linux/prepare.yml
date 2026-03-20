@@ -15,7 +15,7 @@
         name: zabbix
         state: present
         system: true
-    
+
     - name: Create zabbix user
       become: true
       ansible.builtin.user:

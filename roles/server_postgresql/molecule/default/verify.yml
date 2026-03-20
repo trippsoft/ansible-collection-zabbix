@@ -198,7 +198,7 @@
           - _pgsql_config_ssl_key_file.stdout == _pgsql_ssl_key_file_expected
         fail_msg: "PostgreSQL ssl_key_file is incorrect: {{ _pgsql_config_ssl_key_file.stdout }}"
         success_msg: "PostgreSQL ssl_key_file is correct: {{ _pgsql_config_ssl_key_file.stdout }}"
-    
+
     - name: Get pg_hba.conf contents
       become: true
       ansible.builtin.slurp:

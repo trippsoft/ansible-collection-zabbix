@@ -5,10 +5,10 @@ galaxy_info:
   role_name: server_postgresql
   description: |
     This role installs PostgreSQL server for use by a Zabbix Server on a Linux system.
-    
+
     This role uses **trippsc2.postgresql.install** to install PostgreSQL.
     The *pgsql_additional_hba_entries* variable is overridden by this role. The rest of the role variables can be set in the playbook or inventory.
-  
+
   license: MIT
 
   min_ansible_version: '2.16'

@@ -126,7 +126,7 @@
           - zbxproxy_vault_database_mount_point is defined
         fail_msg: Zabbix Vault database mount point must be defined.
         success_msg: Zabbix Vault database mount point is defined.
-    
+
     - name: Validate Vault database path is defined
       ansible.builtin.assert:
         that:

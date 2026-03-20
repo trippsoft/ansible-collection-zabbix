@@ -14,7 +14,7 @@
         ansible_user: Admin
         ansible_httpapi_pass: zabbix
       community.zabbix.zabbix_api_info:
-    
+
     - name: Set credential variables
       ansible.builtin.set_fact:
         _zabbix_username: Admin

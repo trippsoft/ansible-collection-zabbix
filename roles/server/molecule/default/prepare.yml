@@ -92,7 +92,7 @@
             createhome: false
             comment: PostgreSQL Server
             state: present
-        
+
         - name: Create PostgreSQL certificate
           ansible.builtin.include_role:
             name: trippsc2.hashi_vault.signed_certificate
@@ -111,7 +111,7 @@
               - IP:127.0.0.1
             cert_copy_ca_chain: true
             cert_ca_chain_path: "{{ pgsql_ssl_ca_file }}"
-        
+
         - name: Configure Zabbix PostgreSQL
           ansible.builtin.include_role:
             name: trippsc2.zabbix.server_postgresql
@@ -146,7 +146,7 @@
             name: "{{ _nginx_group }}"
             state: present
             system: true
-        
+
         - name: Create nginx user
           become: true
           ansible.builtin.user:
@@ -160,7 +160,7 @@
             createhome: false
             comment: Nginx web server
             state: present
-        
+
         - name: Create NGINX certificate
           ansible.builtin.include_role:
             name: trippsc2.hashi_vault.signed_certificate
@@ -192,7 +192,7 @@
         name: zabbix
         state: present
         system: true
-    
+
     - name: Create zabbix user
       become: true
       ansible.builtin.user:

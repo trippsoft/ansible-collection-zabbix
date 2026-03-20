@@ -26,7 +26,7 @@
           - vmware_username is defined
         fail_msg: "The 'vmware_username' variable is not defined."
         success_msg: "The 'vmware_username' variable is defined."
-    
+
     - name: Validate VMware password is defined
       ansible.builtin.assert:
         that:
@@ -47,7 +47,7 @@
           - vmware_vm_name is defined
         fail_msg: "The 'vmware_vm_name' variable is not defined."
         success_msg: "The 'vmware_vm_name' variable is defined."
-    
+
     - name: Validate VMware VM Folder is defined when VM name is defined
       ansible.builtin.assert:
         that:

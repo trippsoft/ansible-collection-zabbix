@@ -1,28 +1,28 @@
 ---
 galaxy_info:
-    author: Jim Tarpley (@trippsc2)
-    namespace: trippsc2
-    role_name: agent2
-    description: This role installs the Zabbix Agent 2 on a Linux or Windows system.
-    license: MIT
+  author: Jim Tarpley (@trippsc2)
+  namespace: trippsc2
+  role_name: agent2
+  description: This role installs the Zabbix Agent 2 on a Linux or Windows system.
+  license: MIT
 
-    min_ansible_version: '2.16'
+  min_ansible_version: '2.16'
 
-    platforms:
-      - name: Debian
-        versions:
-          - bookworm
-      - name: EL
-        versions:
-          - '9'
-          - '8'
-      - name: Ubuntu
-        versions:
-          - noble
-          - jammy
-      - name: Windows
-        versions:
-          - all
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+    - name: EL
+      versions:
+        - '9'
+        - '8'
+    - name: Ubuntu
+      versions:
+        - noble
+        - jammy
+    - name: Windows
+      versions:
+        - all
 
 collections:
   - ansible.posix

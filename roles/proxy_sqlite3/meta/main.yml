@@ -4,7 +4,7 @@ galaxy_info:
   namespace: trippsc2
   role_name: proxy_sqlite3
   description: This role installs a SQLite3 database for use by a Zabbix Proxy on a Linux system.
-  
+
   license: MIT
 
   min_ansible_version: '2.16'
