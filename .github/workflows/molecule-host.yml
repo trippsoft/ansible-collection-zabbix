@@ -28,7 +28,7 @@ defaults:
     working-directory: 'trippsc2.zabbix'
 jobs:
   molecule_linux:
-    name: Run Molecule tests - Linux
+    name: Run Molecule tests - host - Linux
     runs-on:
       - self-hosted
       - linux
@@ -73,7 +73,7 @@ jobs:
           MOLECULE_BOX: ${{ matrix.box }}
           MOLECULE_ZABBIX_MAJOR_VERSION: ${{ matrix.version }}
   molecule_linux_proxy:
-    name: Run Molecule tests - Linux with proxy
+    name: Run Molecule tests - host - Linux with proxy
     runs-on:
       - self-hosted
       - linux
@@ -118,7 +118,7 @@ jobs:
           MOLECULE_BOX: ${{ matrix.box }}
           MOLECULE_ZABBIX_MAJOR_VERSION: ${{ matrix.version }}
   molecule_win:
-    name: Run Molecule tests - Windows
+    name: Run Molecule tests - host - Windows
     runs-on:
       - self-hosted
       - linux
@@ -157,7 +157,7 @@ jobs:
           MOLECULE_BOX: ${{ matrix.box }}
           MOLECULE_ZABBIX_MAJOR_VERSION: ${{ matrix.version }}
   molecule_win_proxy:
-    name: Run Molecule tests - Windows with proxy
+    name: Run Molecule tests - host - Windows with proxy
     runs-on:
       - self-hosted
       - linux

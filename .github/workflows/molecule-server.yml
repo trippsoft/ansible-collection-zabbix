@@ -28,7 +28,7 @@ defaults:
     working-directory: 'trippsc2.zabbix'
 jobs:
   molecule:
-    name: Run Molecule tests
+    name: Run Molecule tests - server
     runs-on:
       - self-hosted
       - linux
@@ -70,7 +70,7 @@ jobs:
           MOLECULE_BOX: ${{ matrix.box }}
           MOLECULE_ZABBIX_MAJOR_VERSION: ${{ matrix.version }}
   molecule_standalone:
-    name: Run Molecule tests - Standalone
+    name: Run Molecule tests - server - Standalone
     runs-on:
       - self-hosted
       - linux

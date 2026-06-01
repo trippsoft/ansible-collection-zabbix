@@ -51,79 +51,250 @@ jobs:
     name: Generate agent2 role documentation
     permissions:
       contents: write
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'agent2'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate agent2 role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/agent2
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update agent2 role documentation." || /bin/true
+          git push origin main
+          deactivate
   docs_host:
     name: Generate host role documentation
+    needs: docs_agent2
     permissions:
       contents: write
-    needs: docs_agent2
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'host'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate host role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/host
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update host role documentation." || /bin/true
+          git push origin main
+          deactivate
   docs_nginx:
     name: Generate nginx role documentation
+    needs: docs_host
     permissions:
       contents: write
-    needs: docs_host
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'nginx'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate nginx role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/nginx
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update nginx role documentation." || /bin/true
+          git push origin main
+          deactivate
   docs_proxy:
     name: Generate proxy role documentation
+    needs: docs_nginx
     permissions:
       contents: write
-    needs: docs_nginx
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'proxy'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate proxy role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/proxy
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update proxy role documentation." || /bin/true
+          git push origin main
+          deactivate
   docs_proxy_postgresql:
     name: Generate proxy_postgresql role documentation
+    needs: docs_proxy
     permissions:
       contents: write
-    needs: docs_proxy
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'proxy_postgresql'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate proxy_postgresql role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/proxy_postgresql
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update proxy_postgresql role documentation." || /bin/true
+          git push origin main
+          deactivate
   docs_proxy_sqlite3:
     name: Generate proxy_sqlite3 role documentation
+    needs: docs_proxy_postgresql
     permissions:
       contents: write
-    needs: docs_proxy_postgresql
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'proxy_sqlite3'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate proxy_sqlite3 role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/proxy_sqlite3
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update proxy_sqlite3 role documentation." || /bin/true
+          git push origin main
+          deactivate
   docs_repo:
     name: Generate repo role documentation
+    needs: docs_proxy_sqlite3
     permissions:
       contents: write
-    needs: docs_proxy_sqlite3
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'repo'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate repo role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/repo
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update repo role documentation." || /bin/true
+          git push origin main
+          deactivate
   docs_server:
     name: Generate server role documentation
+    needs: docs_repo
     permissions:
       contents: write
-    needs: docs_repo
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'server'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate server role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/server
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update server role documentation." || /bin/true
+          git push origin main
+          deactivate
   docs_server_postgresql:
     name: Generate server_postgresql role documentation
+    needs: docs_server
     permissions:
       contents: write
-    needs: docs_server
-    uses: trippsoft/github-actions/.github/workflows/role-docs.yml@main
-    with:
-      working_directory: 'trippsc2.zabbix'
-      role_name: 'server_postgresql'
+    runs-on:
+      - self-hosted
+      - linux
+      - ansible
+      - x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          path: trippsc2.zabbix
+          ref: main
+      - name: Generate server_postgresql role documentation
+        working-directory: 'trippsc2.zabbix'
+        run: |
+          source ~/venv/ansible-2.16/bin/activate
+          cd ./roles/server_postgresql
+          aar-doc . markdown
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add README.md || /bin/true
+          git commit -m "Update server_postgresql role documentation." || /bin/true
+          git push origin main
+          deactivate
