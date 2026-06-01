@@ -28,7 +28,7 @@ defaults:
     working-directory: 'trippsc2.zabbix'
 jobs:
   molecule:
-    name: Run Molecule tests - proxy_sqlite3
+    name: Run Molecule tests
     runs-on:
       - self-hosted
       - linux
