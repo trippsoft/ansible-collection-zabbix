@@ -11,13 +11,15 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - bookworm
+        - trixie
     - name: EL
       versions:
+        - '10'
         - '9'
         - '8'
     - name: Ubuntu
       versions:
+        - resolute
         - noble
         - jammy
 

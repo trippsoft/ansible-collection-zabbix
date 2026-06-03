@@ -13,7 +13,6 @@ galaxy_info:
     - name: Debian
       versions:
         - trixie
-        - bookworm
     - name: EL
       versions:
         - '10'
@@ -21,6 +20,7 @@ galaxy_info:
         - '8'
     - name: Ubuntu
       versions:
+        - resolute
         - noble
         - jammy
 

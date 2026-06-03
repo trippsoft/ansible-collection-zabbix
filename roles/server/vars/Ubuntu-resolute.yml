@@ -1,13 +1,11 @@
 ---
 _zbxserver_os_is_supported: true
-_zbxserver_os_is_tested: false
+_zbxserver_os_is_tested: true
 
 _zbxserver_supported_major_versions:
   - '7.4'
-  - '7.2'
-  - '7.0'
 
-_zbxserver_default_firewall_type: firewalld
+_zbxserver_default_firewall_type: ufw
 
 _zbxserver_default_configure_selinux: false
 

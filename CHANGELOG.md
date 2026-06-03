@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-06-02
+
+### Role - agent2
+
+- Added support for Ubuntu 26.04.
+
+### Role - nginx
+
+- Added support for Ubuntu 26.04.
+
+### Role - proxy
+
+- Added support for Ubuntu 26.04.
+
+### Role - proxy_postgresql
+
+- Added support for Ubuntu 26.04.
+
+### Role - proxy_sqlite3
+
+- Added support for Ubuntu 26.04.
+
+### Role - repo
+
+- Added support for Ubuntu 26.04.
+
+### Role - server
+
+- Added support for Ubuntu 26.04.
+
+### Role - server_postgresql
+
+- Added support for Ubuntu 26.04.
+
 ## [1.2.0] - 2025-10-09
 
 ### Role - agent2
