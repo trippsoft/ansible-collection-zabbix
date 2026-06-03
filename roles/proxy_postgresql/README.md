@@ -1,7 +1,7 @@
 <!-- BEGIN_ANSIBLE_DOCS -->
 
 # Ansible Role: trippsc2.zabbix.proxy_postgresql
-Version: 1.2.0
+Version: 1.3.0
 
 This role installs PostgreSQL server for use by a Zabbix Proxy on a Linux system.
 
@@ -13,9 +13,9 @@ The *pgsql_additional_hba_entries* variable is overridden by this role. The rest
 
 | Platform | Versions |
 | -------- | -------- |
-| Debian | <ul><li>trixie</li><li>bookworm</li></ul> |
+| Debian | <ul><li>trixie</li></ul> |
 | EL | <ul><li>10</li><li>9</li><li>8</li></ul> |
-| Ubuntu | <ul><li>noble</li><li>jammy</li></ul> |
+| Ubuntu | <ul><li>resolute</li><li>noble</li><li>jammy</li></ul> |
 
 ## Dependencies
 | Role |
